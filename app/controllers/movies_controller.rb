@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @sort_by = params[:sort] || session[:sort]
+    @sort_by = params[:sort] || session[:sort] || 'title'
     @direction = params[:direction] || session[:direction] || 'asc'
     session[:sort] = @sort_by
     session[:direction] = @direction
