@@ -1,0 +1,46 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Movies" %>
+
+<h1>Movies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="<%= 'sorted-asc' if params[:sort] == 'title' && params[:direction] == 'asc' %> <%= 'sorted-desc' if params[:sort] == 'title' && params[:direction] == 'desc' %>">
+  <%= link_to 'Title', movies_path(sort: 'title', direction: toggle_direction('title')) %>
+  <%= arrow_for_column('title') %>
+</th>
+<th class="<%= 'sorted-asc' if params[:sort] == 'rating' && params[:direction] == 'asc' %> <%= 'sorted-desc' if params[:sort] == 'rating' && params[:direction] == 'desc' %>">
+  <%= link_to 'Rating', movies_path(sort: 'rating', direction: toggle_direction('rating')) %>
+  <%= arrow_for_column('rating') %>
+</th>
+<th class="<%= 'sorted-asc' if params[:sort] == 'release_date' && params[:direction] == 'asc' %> <%= 'sorted-desc' if params[:sort] == 'release_date' && params[:direction] == 'desc' %>">
+  <%= link_to 'Release Date', movies_path(sort: 'release_date', direction: toggle_direction('release_date')) %>
+  <%= arrow_for_column('release_date') %>
+</th>
+<th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.release_date ? movie.release_date.strftime('%d-%b-%Y') : 'N/A' %></td>
+        <td>
+        <%= link_to 'Show', movie_path(movie), class: 'button' %>
+        <%= link_to 'Edit', edit_movie_path(movie), class: 'button' %>
+        <%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="new-movie-button">
+    <%= link_to 'New Movie', new_movie_path, class: 'button' %>
+  </div>
+
+

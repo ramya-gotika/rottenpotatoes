@@ -13,3 +13,91 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+
+  .container {
+    padding: 20px; /* Adjust the value as per your need */
+  }
+  
+
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Ensure borders don't double up */
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #333; /* Dark border color */
+    padding: 10px; /* Space inside the cells */
+    text-align: left;
+  }
+  
+  th {
+    background-color: #add8e6; /* Light blue background */
+    color: #333; /* Dark text for contrast */
+  }
+  
+  td {
+    background-color: #f0f8ff; /* Very light blue background */
+    color: #333; /* Dark text for contrast */
+  }
+  
+  /* Add hover effect for table rows */
+  tr:hover td {
+    background-color: #e0e0e0; /* Slightly gray hover effect */
+  }
+  
+  /* Pastel green for ascending sorted column */
+th.sorted-asc {
+    background-color: #b2d8b2; /* Light pastel green */
+  }
+  
+  /* Pastel coral for descending sorted column */
+  th.sorted-desc {
+    background-color: #ffd1c1; /* Light pastel coral */
+  }
+  
+  /* Alternate row color for better readability */
+  tr:nth-child(even) td {
+    background-color: #e6f2ff; /* Lighter blue for even rows */
+  }
+  
+ 
+  /* Add spacing between form fields */
+form div {
+    margin-bottom: 20px; /* Adjust the spacing as needed */
+  }
+  
+  .button {
+    background-color: #add8e6; 
+    color: #333; 
+    padding: 10px 20px; /* Add some padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px; /* Rounded corners */
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    flex: 0 1 auto; /* Ensure buttons don't stretch or shrink */
+    margin-right: 5px;
+  }
+  
+  .button:hover {
+    background-color: #4682b4; /* Darker blue on hover */
+  }
+
+  .button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px; /* Optional, space above the buttons */
+  }
+
+  td .button {
+    display: inline-block;
+  }
