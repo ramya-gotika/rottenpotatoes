@@ -76,7 +76,6 @@ GEM
     ast (2.4.2)
     base64 (0.2.0)
     bigdecimal (3.1.8)
-    bindex (0.8.1)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
     brakeman (6.2.1)
@@ -157,6 +156,7 @@ GEM
     parser (3.3.5.0)
       ast (~> 2.4.1)
       racc
+    pg (1.5.8)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -274,11 +274,6 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
     useragent (0.16.10)
-    web-console (4.2.1)
-      actionview (>= 6.0.0)
-      activemodel (>= 6.0.0)
-      bindex (>= 0.4.0)
-      railties (>= 6.0.0)
     webrick (1.8.2)
     websocket (1.2.11)
     websocket-driver (0.7.6)
@@ -311,6 +306,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  pg
   puma (>= 5.0)
   rails (~> 7.2.1)
   rubocop-rails-omakase
@@ -320,7 +316,9 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
-  web-console
+
+RUBY VERSION
+   ruby 3.3.4p94
 
 BUNDLED WITH
    2.5.17
